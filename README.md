@@ -50,8 +50,8 @@ Configuration for `alfresco`, `transform-router` and `transform-core-aio` are in
 NGINX balancer configuration for every service is available in:
 
 * [acs-enterprise/config/nginx-core-aio.conf](acs-community/config/nginx-core-aio.conf)
-* [acs-enterprise/config/nginx-core-aio.conf](acs-community/config/nginx-router.conf)
-* [acs-enterprise/config/nginx-core-aio.conf](acs-community/config/nginx-shared-file-store.conf)
+* [acs-enterprise/config/nginx-router.conf](acs-community/config/nginx-router.conf)
+* [acs-enterprise/config/nginx-shared-file-store.conf](acs-community/config/nginx-shared-file-store.conf)
 
 >> This configuration increases Transform Service availability and performance, doubling the resources available to perform transformation operations
 
