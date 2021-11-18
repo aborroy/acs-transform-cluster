@@ -41,8 +41,8 @@ Improving availability or performance may be achieved by adding Load Balancer We
 The [docker-compose.yml]((acs-enterprise/docker-compose.yml) file includes:
 
 * 2 instances of `transform-router` service (`transform-router-1` and `transform-router-2`) with 1 instance of NGINX Web Proxy named as `transform-router-proxy`)
-* 2 instances of `transform-core-aio` service (`transform-core-aio-1` and `transform-core-aio-2`) with 1 instance of NGINX Web Proxy named as `transform-core-aio-proxy`)
-* 2 instances of `shared-file-store` service (`shared-file-store-1` and `shared-file-store-2`) with 1 instance of NGINX Web Proxy named as `shared-file-store-proxy`)
+* 2 instances of `transform-core-aio` service (`transform-core-aio-1` and `transform-core-aio-2`) with 1 instance of NGINX Web Proxy named as `transform-core-aio-proxy`
+* 2 instances of `shared-file-store` service (`shared-file-store-1` and `shared-file-store-2`) with 1 instance of NGINX Web Proxy named as `shared-file-store-proxy`
   * Both instances are sharing storage by using a common volume named `shared-file-store-volume`
 
 Configuration for `alfresco`, `transform-router` and `transform-core-aio` are including links to *Web Proxy* services instead of accesing to each instance of Transform Services
