@@ -4,7 +4,7 @@ This project includes Docker Compose templates providing simple clusterization a
 
 * [acs-community](acs-community) folder includes Docker Compose deployment for ACS Community 7.1
 * [acs-enterprise](acs-enterprise) folder includes Docker Compose deployment for ACS Enterprise 7.1
-* [acs-enterprise-individual](acs-enterprise-individual) folder includes Docker Compose deployment of individual Transform Services for ACS Enterprise 7.1 (only ADW is supported)
+* [acs-enterprise-individual](acs-enterprise-individual) folder includes Docker Compose deployment of individual Transform Services for ACS Enterprise 7.1
 
 >> Note this is a sample deployment designed for education purposes. When scaling up Alfresco Transform Service in real world, additional requirements should impact in the design of the final deployment.
 
@@ -105,9 +105,9 @@ NGINX balancer configuration for `libreoffice` is available in:
 
 * [acs-enterprise-individual/config/nginx-libreoffice.conf](acs-enterprise-individual/config/nginx-libreoffice.conf)
 
->> This configuration increases LibreOffice Transform Service availability and performance, doubling the resources available to perform Office-reated transformation operations
+Note that this configuration requires `local.transform.service.enabled=true` when used with Share 7.1, but this flag can be changed to `false` when using only ADW / ACA (ADF UI Apps)
 
->> Note that this configuration is not supported to be used with Share 7.1
+>> This configuration increases LibreOffice Transform Service availability and performance, doubling the resources available to perform Office-reated transformation operations
 
 
 ## Additional resources
