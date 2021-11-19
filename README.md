@@ -4,6 +4,7 @@ This project includes Docker Compose templates providing simple clusterization a
 
 * [acs-community](acs-community) folder includes Docker Compose deployment for ACS Community 7.1
 * [acs-enterprise](acs-enterprise) folder includes Docker Compose deployment for ACS Enterprise 7.1
+* [acs-enterprise-individual](acs-enterprise-individual) folder includes Docker Compose deployment of individual Transform Services for ACS Enterprise 7.1 (only ADW is supported)
 
 >> Note this is a sample deployment designed for education purposes. When scaling up Alfresco Transform Service in real world, additional requirements should impact in the design of the final deployment.
 
@@ -49,9 +50,9 @@ Configuration for `alfresco`, `transform-router` and `transform-core-aio` are in
 
 NGINX balancer configuration for every service is available in:
 
-* [acs-enterprise/config/nginx-core-aio.conf](acs-community/config/nginx-core-aio.conf)
-* [acs-enterprise/config/nginx-router.conf](acs-community/config/nginx-router.conf)
-* [acs-enterprise/config/nginx-shared-file-store.conf](acs-community/config/nginx-shared-file-store.conf)
+* [acs-enterprise/config/nginx-core-aio.conf](acs-enterprise/config/nginx-core-aio.conf)
+* [acs-enterprise/config/nginx-router.conf](acs-enterprise/config/nginx-router.conf)
+* [acs-enterprise/config/nginx-shared-file-store.conf](acs-enterprise/config/nginx-shared-file-store.conf)
 
 >> This configuration increases Transform Service availability and performance, doubling the resources available to perform transformation operations
 
@@ -89,6 +90,25 @@ transform-router-1-1         91a54b89287e   8.69%     265.4MiB / 512MiB
 transform-router-2-1         00c875133b1f   4.17%     260.8MiB / 512MiB
 transform-router-proxy-1     fac01c065ce3   0.00%     2.23MiB / 19.55GiB
 ```
+
+In addition, instead of **AIO**, individual Transform Services can be deployed. Using this approach, resouces can be adjusted more specifically to the use case requirements.
+
+Simple invididual Transform Services deployment is available in [docker-compose.yml]((acs-enterprise-individual/docker-compose.yml). Instead of `transform-core-aio` service, individual services are included:
+
+* 1 instance of `alfresco-pdf-renderer`
+* 1 instance of `imagemagick`
+* 1 instance of `tika`
+* 1 instance of `misc`
+* 2 instances of `libreoffice` service (`libreoffice-1` and `libreoffice-2`) with 1 instance of NGINX Web Proxy named as `libreoffice-proxy`
+
+NGINX balancer configuration for `libreoffice` is available in:
+
+* [acs-enterprise-individual/config/nginx-libreoffice.conf](acs-enterprise-individual/config/nginx-libreoffice.conf)
+
+>> This configuration increases LibreOffice Transform Service availability and performance, doubling the resources available to perform Office-reated transformation operations
+
+>> Note that this configuration is not supported to be used with Share 7.1
+
 
 ## Additional resources
 
