@@ -93,7 +93,7 @@ transform-router-proxy-1     fac01c065ce3   0.00%     2.23MiB / 19.55GiB
 
 In addition, instead of **AIO**, individual Transform Services can be deployed. Using this approach, resouces can be adjusted more specifically to the use case requirements.
 
-Simple invididual Transform Services deployment is available in [docker-compose.yml]((acs-enterprise-individual/docker-compose.yml). Instead of `transform-core-aio` service, individual services are included:
+Simple invididual Transform Services deployment is available in [docker-compose.yml](acs-enterprise-individual/docker-compose.yml). Instead of `transform-core-aio` service, individual services are included:
 
 * 1 instance of `alfresco-pdf-renderer`
 * 1 instance of `imagemagick`
