@@ -109,6 +109,9 @@ Note that this configuration requires `local.transform.service.enabled=true` whe
 
 >> This configuration increases LibreOffice Transform Service availability and performance, doubling the resources available to perform Office-reated transformation operations
 
+**Alternative HA Configuration**
+
+An alternative approach would be to duplicate the whole Transform Engine stack. Using a `proxy/load-balance` in front of a number of services including 1 instance of `transform-router`, 1 instance of `transform-core-aio` and 1 instance of `shared-file-store`.
 
 ## Additional resources
 
